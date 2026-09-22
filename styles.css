@@ -154,7 +154,6 @@ section {
   padding: 0;
 }
 
-
 /* ---------- Hero ---------- */
 
 .hero {
@@ -181,6 +180,22 @@ section {
 
 .event-details dd {
   margin: 0;
+}
+
+/* ---------- Form Embed ---------- */
+
+.form-embed {
+  display: block;
+  width: 100%;
+  height: 1200px;   /* set this to your form's full height */
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+/* Forms get taller on narrow screens as text wraps */
+@media (max-width: 640px) {
+  .form-embed { height: 1600px; }
 }
 
 /* ---------- Buttons ---------- */
