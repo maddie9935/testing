@@ -74,13 +74,13 @@ main {
   box-shadow: 0 1px 0 #d6d0bf, 0 10px 24px -14px rgba(60, 50, 20, .45);
 }
 
-h1 {
+h2 {
   font-size: clamp(2rem, 5vw, 2.75rem);
   line-height: 1.1;
   margin: 0 0 .5rem;
   letter-spacing: -.01em;
 }
-h2 { font-size: 1.3rem; margin: 2rem 0 .5rem; }
+h3 { font-size: 1.3rem; margin: 2rem 0 .5rem; }
 p { margin: 0 0 1rem; max-width: 38rem; }
 .lede { font-size: 1.15rem; color: var(--ink-soft); }
 
