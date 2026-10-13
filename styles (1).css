@@ -1,0 +1,183 @@
+/* Room 14 seating chart demo: notebook-paper theme */
+:root {
+  --paper: #fdfcf7;
+  --rule: #c9dbee;
+  --margin: #e07a72;
+  --ink: #23303d;
+  --ink-soft: #4d5b69;
+  --pencil: #f2c230;
+  --pencil-dark: #b8901a;
+  --link: #1f5f9e;
+}
+
+* { box-sizing: border-box; }
+
+html { background: #e8e4d8; }
+
+body {
+  margin: 0;
+  font-family: "Atkinson Hyperlegible", "Segoe UI", Verdana, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  background: var(--ink);
+  color: #fff;
+  padding: .5rem .9rem;
+  border-radius: 4px;
+  z-index: 10;
+}
+.skip-link:focus { top: 1rem; }
+
+/* Pencil-yellow header */
+.site-header {
+  background: var(--pencil);
+  border-bottom: 6px solid var(--pencil-dark);
+}
+.site-header .inner {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: .5rem 1.5rem;
+}
+.site-name {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+.site-header nav a {
+  color: var(--ink);
+  margin-left: 1.1rem;
+  text-underline-offset: 3px;
+}
+.site-header nav a:first-child { margin-left: 0; }
+
+/* The notebook page */
+main {
+  max-width: 52rem;
+  margin: 2rem auto 3rem;
+  padding: 2.5rem 1.5rem 2.5rem 4.5rem;
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(to right, transparent 3.2rem, var(--margin) 3.2rem, var(--margin) calc(3.2rem + 2px), transparent calc(3.2rem + 2px)),
+    repeating-linear-gradient(to bottom, transparent 0, transparent calc(1.7rem - 1px), var(--rule) calc(1.7rem - 1px), var(--rule) 1.7rem);
+  box-shadow: 0 1px 0 #d6d0bf, 0 10px 24px -14px rgba(60, 50, 20, .45);
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  line-height: 1.1;
+  margin: 0 0 .5rem;
+  letter-spacing: -.01em;
+}
+h2 { font-size: 1.3rem; margin: 2rem 0 .5rem; }
+p { margin: 0 0 1rem; max-width: 38rem; }
+.lede { font-size: 1.15rem; color: var(--ink-soft); }
+
+a { color: var(--link); }
+a:hover { color: var(--ink); }
+
+:focus-visible {
+  outline: 3px solid var(--link);
+  outline-offset: 3px;
+}
+
+/* Seating chart: the image map must stay at its natural size,
+   so the frame scrolls instead of scaling the image. */
+.chart {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+.chart img {
+  display: block;
+  max-width: none;
+  border: 3px solid var(--ink);
+  border-radius: 2px;
+  background: #fff;
+}
+.chart figcaption {
+  margin-top: .5rem;
+  font-size: .95rem;
+  color: var(--ink-soft);
+}
+
+/* Note explaining the intentional failure */
+.test-note {
+  margin-top: 2rem;
+  padding: 1rem 1.25rem;
+  background: #fff6d6;
+  border-left: 6px solid var(--pencil);
+  max-width: 38rem;
+}
+.test-note h2 { margin-top: 0; font-size: 1.1rem; }
+.test-note p:last-child { margin-bottom: 0; }
+code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: .92em;
+  background: #f1ecd8;
+  padding: .05em .3em;
+  border-radius: 3px;
+}
+
+/* Row pages */
+table {
+  border-collapse: collapse;
+  margin: 1rem 0 1.5rem;
+  min-width: 18rem;
+  background: #fff;
+}
+th, td {
+  text-align: left;
+  padding: .45rem .9rem;
+  border: 1px solid #b9c3cc;
+}
+thead th { background: var(--pencil); }
+
+.back-link {
+  display: inline-block;
+  font-weight: 700;
+  padding: .5rem .9rem;
+  border: 2px solid var(--ink);
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--ink);
+  background: #fff;
+}
+.back-link:hover { background: var(--pencil); }
+
+footer {
+  max-width: 52rem;
+  margin: 0 auto 2rem;
+  padding: 0 1.25rem;
+  font-size: .9rem;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 600px) {
+  main {
+    margin: 1rem .5rem 2rem;
+    padding: 2rem 1rem 2rem 2.75rem;
+    background-image:
+      linear-gradient(to right, transparent 1.9rem, var(--margin) 1.9rem, var(--margin) calc(1.9rem + 2px), transparent calc(1.9rem + 2px)),
+      repeating-linear-gradient(to bottom, transparent 0, transparent calc(1.7rem - 1px), var(--rule) calc(1.7rem - 1px), var(--rule) 1.7rem);
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
