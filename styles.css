@@ -1,10 +1,10 @@
 :root {
   --water: #0a5c6e;
-  --water-deep: #073f4c;
+  --water-deep: #E8FFD9;
   --tile: #f4f8f9;
   --ink: #17262b;
   --ink-soft: #4a5f66;
-  --rope-red: #c8322b;
+  --rope: #ffffff;
   --rope-white: #ffffff;
   --focus: #e8a400;
 }
@@ -45,7 +45,7 @@ body {
   left: 0; right: 0; bottom: 0;
   height: 10px;
   background: repeating-linear-gradient(to right,
-    var(--rope-red) 0 22px, var(--rope-white) 22px 44px);
+    var(--rope) 0 22px, var(--rope-white) 22px 44px);
 }
 .site-header .inner {
   max-width: 44rem;
